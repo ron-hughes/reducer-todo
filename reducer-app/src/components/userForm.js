@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 
-export const UserForm = () => {
+export const UserForm = (props) => {
 
     const [ inputText, setInputText ] = useState('')
 
@@ -12,9 +12,15 @@ export const UserForm = () => {
             setInputText(event.target.value)
     }
 
+    const addTodo = event => {
+        event.preventDefault();
+       props.dispatch( { type: "ADD_TODO", payload: inputText })
+    }
+
     return (
-        <form>
-            <input type="text"  style={{ width: '100%'}}onChange={changeHandler} name="inputText" value={inputText} style={ {backgroundColor: 'white'}}/>
+        <form onSubmit={addTodo}>
+            <input type="text"  style={{ width: '500px'}} onChange={changeHandler} name="inputText" value={inputText} style={ {backgroundColor: 'white'}}/>
+            <button type="submit" onClick={console.log(props.dispatch)}>Add Todo</button>
         </form>
     )
 }

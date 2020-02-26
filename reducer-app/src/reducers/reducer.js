@@ -24,5 +24,9 @@ export const initialState = {
 }
 
 export const reducer = (state, action) => {
-    return state
+    // I want to return the original state, and add a new object to state array
+    switch(action.type) {
+    case "ADD_TODO":
+        return { ...state, todos : [action.payload] } 
+    }
 }
