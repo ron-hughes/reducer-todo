@@ -11,8 +11,8 @@ export const UseReduce = () => {
         <>
        <div>
            {/* {console.log(state)} */}
-           {state.todos.map((item, id) => { return <div style={{ display: 'inline-block'}}> <div key={id} style={{ backgroundColor: 'skyblue', margin: '20px 20px 20px 120px', width: '600px', height: '200px', textAlign: 'middle'}}>{item.item}</div></div>})}
-           <UserForm dispatch={dispatch}/>
+           {state.todos.map((item, id) => { return <div style={{ display: 'inline-block'}}> <div key={id} style={{ backgroundColor: 'skyblue', margin: '20px 20px 20px 120px', width: '600px', height: '200px', color: 'purple', fontSize: '4rem'}}>{item.item}</div></div>})}
+           <UserForm dispatch={dispatch} state={state} />
        </div>
         </>
     )
